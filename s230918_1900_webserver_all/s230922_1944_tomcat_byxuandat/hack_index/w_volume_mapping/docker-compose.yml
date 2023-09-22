@@ -6,6 +6,6 @@ services:
     ports:
       - 38080:8080
     volumes:
-      #        . means folder container this .yml file
-      -        ./usr/local/tomcat/webapps:/usr/local/tomcat/webapps
-      #  /path/in/local/machine/as/source:/path/in/container/to/map
+      #            . means folder container this .yml file
+      -            ./usr/local/tomcat/webapps:/usr/local/tomcat/webapps
+      # /path/in/localmachine/as/source/tomap:/path/in/container/tomap
