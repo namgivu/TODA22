@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  nginx_c:
+    image: nginx
+    ports:
+      - 388:80
+    volume:
+      #                . is the folder containing this .yml file
+      -                ./usr/share/nginx/html:/usr/share/nginx/html
+      # /path/in/localmachine/as/source/tomap:/path/in/container/tomap
