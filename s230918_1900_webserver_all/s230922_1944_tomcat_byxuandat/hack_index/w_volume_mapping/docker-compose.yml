@@ -4,7 +4,7 @@ services:
   tomcat_c:
     image: tomcat
     ports:
-      - 28080:8080
+      - 38080:8080
     volumes:
       #        . means folder container this .yml file
       -        ./usr/local/tomcat/webapps:/usr/local/tomcat/webapps
