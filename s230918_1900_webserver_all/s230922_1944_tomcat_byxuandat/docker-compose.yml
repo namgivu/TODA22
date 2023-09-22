@@ -5,6 +5,8 @@ services:
     image: tomcat
     ports:
       - 28080:8080
+
+    # ref Dat's steps to init tomcat webapps fr webapps-dist
     command:  # ref https://stackoverflow.com/a/55406543/248616
       - bash 
       - -c
