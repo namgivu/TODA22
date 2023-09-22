@@ -1,3 +1,5 @@
+set -e  # halt if err
+
 docker-compose up -d
 
 echo 
