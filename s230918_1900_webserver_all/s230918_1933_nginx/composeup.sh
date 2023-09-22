@@ -7,4 +7,4 @@ docker-compose logs
 
 echo
 
-http :33388 | grep 'Welcome to nginx!' --color=always
+http :288 | grep 'Welcome to nginx!' --color=always

@@ -5,4 +5,4 @@ services:
   nginx_c:
     image: nginx
     ports:
-      - 33388:80
+      - 288:80
