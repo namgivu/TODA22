@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  tomcat_c:
+    image: tomcat
+    ports:
+      - 28080:8080
+    command:  # ref https://stackoverflow.com/a/55406543/248616
+      - bash 
+      - -c
+      - |
+        cd /usr/local/tomcat
+        mv webapps webapps-origin
+        cp -r webapps.dist/ webapps
+        echo 'run tomcat server  ref https://github.com/docker-library/tomcat/blob/master/Dockerfile.template#L286C7-L286C25'
+        catalina.sh run
