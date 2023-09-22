@@ -5,12 +5,22 @@ services:
   postgres_c:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: password  # sets the superuser password for PostgreSQL  ref https://hub.docker.com/_/postgres
+      POSTGRES_PASSWORD: password  # sets the superuser password for PostgreSQL  ref https://hub.docker.com/_/postgres @ POSTGRES_PASSWORD
                                    # default  superuser is defined by the POSTGRES_USER environment variable.
 
       # POSTGRES_USER: postgres    # POSTGRES_USER default value is postgres
+
+      # volume mapping to keep postgres data  ref https://hub.docker.com/_/postgres @ PGDATA
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_v:/var/lib/postgresql/data
+      #    volname:/path/in/container/tomapto/
+      #    volname <- docker will manage where-in-local-machine to store the mapped folder  <- use docker volume inspect :volname to get detail path
 
   adminer_c:  # GUI web client to view data of :postgres_c
     image: adminer
     ports:
       - 8080:8080
+
+volumes:
+  postgres_v:
