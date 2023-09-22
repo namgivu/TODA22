@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  postgres_c:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: password  # sets the superuser password for PostgreSQL  ref https://hub.docker.com/_/postgres
+                                   # default  superuser is defined by the POSTGRES_USER environment variable.
+
+      # POSTGRES_USER: postgres    # POSTGRES_USER default value is postgres
+
+  adminer_c:  # GUI web client to view data of :postgres_c
+    image: adminer
+    ports:
+      - 8080:8080
