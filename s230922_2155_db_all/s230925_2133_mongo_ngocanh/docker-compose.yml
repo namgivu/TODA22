@@ -1,0 +1,24 @@
+version : '3'
+
+services:
+  mongo_c:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_v:/data/db
+
+  mongo-express_c:
+    depends_on:
+      - mongo_c
+    restart: always  #NOTE for some reason, we MUST keep restarting to get mongoexpress run-able vs mongo_c above - maybe mongoexpress run TOO EARLY that :mongo_c not readytoserve yet
+
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://root:password@mongo_c
+
+volumes:
+  mongodb_v:
