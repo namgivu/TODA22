@@ -6,8 +6,13 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql_v:/var/lib/mysql
 
   adminer_c:
     image: adminer
     ports:
       - 8080:8080
+
+volumes:
+  mysql_v:

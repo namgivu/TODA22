@@ -1,5 +1,5 @@
 docker-compose up -d
 
-sleep 1
+sleep 3
 echo
 docker-compose logs
