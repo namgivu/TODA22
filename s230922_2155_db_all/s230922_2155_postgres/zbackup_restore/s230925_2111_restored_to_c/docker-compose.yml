@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  postgres_c:  # restored_to_c
+    image: postgres
+
+    environment:
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data/pgdata
+
+    volumes:
+      - postgres_v:/var/lib/postgresql/data
+
+  adminer_c:  # restored_to_c
+    image: adminer
+    ports:
+      - 20925:8080
+
+volumes:
+  postgres_v:
