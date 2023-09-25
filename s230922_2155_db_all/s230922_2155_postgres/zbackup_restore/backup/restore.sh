@@ -9,5 +9,5 @@ docker run \
     --volumes-from 's230925_2111_restored_to_c_postgres_c_1' \
     -v $SH:/backup `# bring in the backup.tar into container to untar` \
     ubuntu \
-    bash -c "cd /var/lib/postgresql/data/pgdata && tar xvf /backup/backup.tar --strip 1"
+    bash -c "cd /var/lib/postgresql/data && tar xvf /backup/backup.tar --strip 4"
              #TODO use another version of untar command so that easier to understand the script flow / idea
