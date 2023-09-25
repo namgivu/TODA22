@@ -12,6 +12,7 @@ services:
 
       # volume mapping to keep postgres data  ref https://hub.docker.com/_/postgres @ PGDATA
       PGDATA: /var/lib/postgresql/data/pgdata
+
     volumes:
       - postgres_v:/var/lib/postgresql/data
       #    volname:/path/in/container/tomapto/
