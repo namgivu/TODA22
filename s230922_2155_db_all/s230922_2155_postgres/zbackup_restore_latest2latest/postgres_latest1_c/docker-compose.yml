@@ -1,0 +1,23 @@
+version: '3'  # all version at https://docs.docker.com/compose/compose-file/compose-file-v3/
+
+services:
+
+  postgres_latest1_c:
+    image: postgres
+    # login defaut as user / passs as postgres / postgres
+
+    #region volmap
+    environment:
+      POSTGRES_PASSWORD: postgres
+      PGDATA : /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_v:/var/lib/postgresql/data
+    #endregion volmap
+
+  adminer_c:
+    image: adminer
+    ports:
+      - 91:8080
+
+volumes:
+  postgres_v:
