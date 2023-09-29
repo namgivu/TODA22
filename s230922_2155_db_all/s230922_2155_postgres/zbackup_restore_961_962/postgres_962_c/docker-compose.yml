@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+
+  postgres_962_c:
+    image: postgres:9.6.2
+    # login defaut as user / passs as postgres / postgres
+
+    #region volmap
+    environment:
+      PGDATA : /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_v:/var/lib/postgresql/data
+    #endregion volmap
+
+  adminer_c:
+    image: adminer
+    ports:
+      - 9962:8080
+
+volumes:
+  postgres_v:
+    external: true
+    name:     postgres_961_c_postgres_v
