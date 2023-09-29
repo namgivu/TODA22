@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  mysql_c:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql_v:/var/lib/mysql
+
+  adminer_c:
+    image: adminer
+    ports:
+      - 28080:8080
+
+volumes:
+  mysql_v:
+    external: true
+    name:     mysql_latest1_c_mysql_v  # docker inspect mysql_latest1_c_mysql_c_1 | grep -A6 Mounts | grep Name
