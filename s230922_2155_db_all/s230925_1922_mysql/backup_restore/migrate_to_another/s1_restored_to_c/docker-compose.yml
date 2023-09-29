@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  mysql_c:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql_v:/var/lib/mysql
+
+  adminer_c:
+    image: adminer
+    ports:
+      - 28080:8080
+
+volumes:
+  mysql_v:
