@@ -5,7 +5,7 @@ services:
   dockerfile-assignment-1_c:
     image: dockerfile-assignment-1_i
     build:
-      context:    .
-      dockerfile: ./Dockerfile
+      context:    .             #TODO point this to gitcloned folder at .../docker_basic/dockerfile-assignment-1
+      dockerfile: ./Dockerfile  #TODO make $SH/Dockerfile working here
     ports:
       - 21002:3000

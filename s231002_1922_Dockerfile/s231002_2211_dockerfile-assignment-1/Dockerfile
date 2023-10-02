@@ -6,7 +6,7 @@ RUN echo "WORKDIR at `pwd`"
 
 COPY .          .
 #    fr         to
-#    context_d  WORKDIR
+#    context_d  WORKDIR ie /app
 #    local      container
 
 # announce docker engine what ports this container is serving
