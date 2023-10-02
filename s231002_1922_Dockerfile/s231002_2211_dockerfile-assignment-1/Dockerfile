@@ -1,5 +1,7 @@
 FROM node
 
+WORKDIR /app
+
 RUN echo "WORKDIR at `pwd`"
 
 COPY .          .
@@ -7,4 +9,9 @@ COPY .          .
 #    context_d  WORKDIR
 #    local      container
 
-CMD npm i ; npm run start
+# announce docker engine what ports this container is serving
+EXPOSE                               3000  
+
+CMD echo 'Running nodejs app at port 3000' ; \
+    npm i ; npm run start                  ; \
+    echo 
