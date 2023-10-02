@@ -1,11 +1,8 @@
 SH=`cd $(dirname ${BASH_SOURCE:-$0}) && pwd`
 cd $SH
 
-docker build -t my_helloworld_i .
-exit
-
 docker build \
-    -t my_helloworld_i `#   -t, --tag list Name and optionally a tag  ref docker build --help` \
+    -t my_helloworld_i `# -t, --tag list Name and optionally a tag  ref docker build --help` \
     .                  `# context folder aka context_d  #TODO what is context_d `
 exit
 
