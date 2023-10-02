@@ -5,6 +5,7 @@ WORKDIR /app
 RUN echo "WORKDIR at `pwd`"
 
 COPY .          .
+#    .          /app
 #    fr         to
 #    context_d  WORKDIR ie /app
 #    local      container
