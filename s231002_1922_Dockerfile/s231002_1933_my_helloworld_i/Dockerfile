@@ -5,7 +5,8 @@ RUN echo "Default WORKDIR: `pwd` "
 
 #    fr         to
 #    local      container
-#    context_d  default WORK_DIR defined by image in FROM above
+#    context_d  default WORKDIR defined by image :alpine in FROM above
+#    $SH        /
 COPY echo.txt   .
 
 CMD cat echo.txt
