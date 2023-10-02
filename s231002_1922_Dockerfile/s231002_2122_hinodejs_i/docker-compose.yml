@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  hinodejs_c:
+    image: hinodejs_i
+    build:
+      context:    .
+      dockerfile: ./Dockerfile  #NOTE we could omit this line since it be defined as default already so
