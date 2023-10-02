@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+
+  hipython_c:
+    image: hipython_i
+    build:
+      context: .
