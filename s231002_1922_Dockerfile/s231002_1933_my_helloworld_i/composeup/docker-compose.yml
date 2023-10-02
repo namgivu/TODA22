@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  helloworld_c:
+    build:
+      #           . of context IS thisfile-container folder
+      context:    .
+      dockerfile: ./Dockerfile  #TODO omit this line to use default behavior, could we?
+      #           . of dockerfile is :context_d ie NOT thisfile-container folder
+    image: my_helloworld_i  # omit this line to get auto-named built image
