@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  dockerfile-assignment-1_c:
+    image: dockerfile-assignment-1_i
+    build:
+      context:    .
+      dockerfile: ./Dockerfile
