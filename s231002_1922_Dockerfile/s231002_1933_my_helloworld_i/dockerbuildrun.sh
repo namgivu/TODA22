@@ -7,4 +7,5 @@ docker build \
 
 #TODO 2nd way to build using image-build in yml
 
+echo
 docker run my_helloworld_i
