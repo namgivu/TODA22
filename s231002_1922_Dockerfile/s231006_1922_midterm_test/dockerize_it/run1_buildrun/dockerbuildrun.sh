@@ -1,10 +1,14 @@
 SH=`cd $(dirname ${BASH_SOURCE:-$0}) && pwd`
 
-context_d="$SH/../context_d--flask_webapp"
+set -e  # halt if err -> only run if can build
+
+context_d="$SH/../../dockerize_it/context_d--flask_webapp"
+
+docker image rm -f midterm_test_flaskwebapp_i || true
 
 docker build \
-  -f "$SH/Dockerfile" \
-  -t midterm_test_flaskapp_i \
+  -f "$SH/../../dockerize_it/Dockerfile" \
+  -t midterm_test_flaskwebapp_i \
   $context_d
 
 echo
@@ -15,7 +19,7 @@ docker run \
   -p'5000':5000 \
   -d \
   --name midterm_test_flaskwebapp_c \
-  midterm_test_flaskapp_i
+  midterm_test_flaskwebapp_i
 
 sleep 3
 echo
