@@ -9,16 +9,16 @@ docker build \
 
 echo
 
-docker rm -f midterm_test_flaskapp_c || true
+docker rm -f midterm_test_flaskwebapp_c || true
 
 docker run \
   -p'5000':5000 \
   -d \
-  --name midterm_test_flaskapp_c \
+  --name midterm_test_flaskwebapp_c \
   midterm_test_flaskapp_i
 
 sleep 3
 echo
-docker ps | grep -E 'midterm_test_flaskapp_c|NAME' --color=always
+docker ps | grep -E 'midterm_test_flaskwebapp_c|NAME' --color=always
 echo
-docker logs midterm_test_flaskapp_c
+docker logs midterm_test_flaskwebapp_c
