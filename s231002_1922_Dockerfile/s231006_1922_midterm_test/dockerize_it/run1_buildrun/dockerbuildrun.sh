@@ -1,6 +1,6 @@
 SH=`cd $(dirname ${BASH_SOURCE:-$0}) && pwd`
 
-context_d="$SH/context_d--flask_webapp"
+context_d="$SH/../context_d--flask_webapp"
 
 docker build \
   -f "$SH/Dockerfile" \
