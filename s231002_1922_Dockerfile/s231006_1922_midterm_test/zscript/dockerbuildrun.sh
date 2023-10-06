@@ -1,8 +1,9 @@
 SH=`cd $(dirname ${BASH_SOURCE:-$0}) && pwd`
 cd $SH
 
-docker build \
-  -t midterm_test_i \
+docker build             \
+  -f "$SH/../Dockerfile" \
+  -t midterm_test_i      \
   .  `# context_d`
 
 echo
