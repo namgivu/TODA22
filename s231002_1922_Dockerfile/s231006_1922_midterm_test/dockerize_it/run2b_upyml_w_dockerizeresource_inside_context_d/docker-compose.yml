@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  midterm_test_flaskwebapp_c:
+    build:
+      #           . CAUTION
+      context:    .
+      dockerfile: ./Dockerfile
+      #           . CAUTION
+
+    ports:
+      - 25000:5000
