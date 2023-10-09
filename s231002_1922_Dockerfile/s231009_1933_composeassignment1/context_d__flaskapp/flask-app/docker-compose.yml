@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  composeassignment1_c:
+    image: composeassignment1_i
+    build:
+      context:    .
+      dockerfile: ./Dockerfile
