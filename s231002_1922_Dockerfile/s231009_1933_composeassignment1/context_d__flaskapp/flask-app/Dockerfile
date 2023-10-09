@@ -14,4 +14,5 @@ RUN ./.venv/bin/pip install -r requirements.txt
 RUN ./.venv/bin/pip freeze
 #endregion flaskapp install package
 
-CMD ls -lah
+#CMD ls -lah
+CMD  ./.venv/bin/python ./app.py
